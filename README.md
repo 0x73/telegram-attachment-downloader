@@ -2,7 +2,7 @@
 Telethon `User-bot` to download attachments in a specific Telegram channel/chat.
 Can be used to:
   - Download all previous attachments in a chat
-  - Monitor for new messages and download all attachments
+  - Monitor for new messages and download the attachments
 
 Uses a 'user' bot since regular bots cannot monitor chats unless they are a group admin.
 
