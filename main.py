@@ -4,9 +4,9 @@ import argparse
 import asyncio
 
 # Set required variables
-API_ID = 
-API_HASH = ''
-CHAT_URL = ''
+API_ID = <API_ID>
+API_HASH = '<APIHASH>'
+CHAT_URL = '<CHAT_URL>'
 SESSION_NAME = 'my_session'
 
 # initialize the client
@@ -16,15 +16,15 @@ client = TelegramClient(SESSION_NAME, API_ID, API_HASH)
 
 # Handle message
 async def process_message(message):
-    if message.file and message.file.name and os.path.exists(message.file.name):
-        print(f"File {message.file.name} already exists, skipping download")
+    if message.file and message.file.name and os.path.exists(os.path.join("./attachments", message.file.name)):
+        print(f"File {message.file.name} already exists, skipping download\n")
     elif message.file and message.file.name is None:
         print(f"Media type does not store original filename")
-        filename = await message.download_media()
-        print(f"Downloaded media: {filename}")
+        filename = await message.download_media(file="./attachments/")
+        print(f"Downloaded media: {filename}\n")
     elif message.file:
-        attachment = await message.download_media()
-        print(f"Downloaded file: {attachment}")
+        attachment = await message.download_media(file="./attachments/")
+        print(f"Downloaded file: {attachment}\n")
 
 # Process previous messages that include media
 async def process_history():
