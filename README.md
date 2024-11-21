@@ -1,5 +1,6 @@
 # Telegram attachment downloader
 Telethon `User-bot` to download attachments in a specific Telegram channel/chat.
+Creates a folder called `attachments` where the downloads will be saved.
 Can be used to:
   - Download all previous attachments in a chat
   - Monitor for new messages and download the attachments
